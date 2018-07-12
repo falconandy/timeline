@@ -1,4 +1,4 @@
-package main
+package timeline
 
 import "testing"
 
@@ -26,8 +26,8 @@ func TestProcessBytes(t *testing.T) {
     }
   ]
 }`)
-	resultTwoRows := processBytes(dataTwoRows);
-	resultOneRow := processBytes(dataOneRow);
+	resultTwoRows := ProcessBytes(dataTwoRows)
+	resultOneRow := ProcessBytes(dataOneRow)
 
 	if resultTwoRows.Context == nil || resultOneRow.Context == nil {
 		t.Errorf("drawScene() faulty\nTwo rows: %s\nOne row: %s", resultTwoRows.Message, resultOneRow.Message)
@@ -35,11 +35,11 @@ func TestProcessBytes(t *testing.T) {
 	}
 
 	// check that drawScene has worked
-	ctxTwoRows := resultTwoRows.Context;
-	ctxOneRow := resultOneRow.Context;
+	ctxTwoRows := resultTwoRows.Context
+	ctxOneRow := resultOneRow.Context
 
-	heightTwoRows := ctxTwoRows.Height();
-	heightOneRow:= ctxOneRow.Height();
+	heightTwoRows := ctxTwoRows.Height()
+	heightOneRow := ctxOneRow.Height()
 
 	if heightOneRow >= heightTwoRows {
 		t.Errorf("processBytes() faulty: %d should be <= %d", heightTwoRows, heightOneRow)

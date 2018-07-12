@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/gerald1248/timeline"
 	"os"
 	"path/filepath"
 	"sync"
@@ -27,10 +28,10 @@ func main() {
 		return
 	}
 
-	ch := make(chan ShortResult)
+	ch := make(chan timeline.ShortResult)
 
 	for _, input := range args {
-		go processFile(input, ch)
+		go timeline.ProcessFile(input, ch)
 	}
 
 	var mu sync.Mutex

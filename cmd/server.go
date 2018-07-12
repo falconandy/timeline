@@ -6,6 +6,7 @@ import (
 	b64 "encoding/base64"
 	"fmt"
 	"github.com/elazarl/go-bindata-assetfs"
+	"github.com/gerald1248/timeline"
 	"github.com/kabukky/httpscerts"
 	"io/ioutil"
 	"log"
@@ -19,9 +20,9 @@ type PostStruct struct {
 
 func serve(certificate, key, hostname string, port int) {
 	virtual_fs := &assetfs.AssetFS{
-		Asset:     Asset,
-		AssetDir:  AssetDir,
-		AssetInfo: AssetInfo}
+		Asset:     timeline.Asset,
+		AssetDir:  timeline.AssetDir,
+		AssetInfo: timeline.AssetInfo}
 
 	//set up custom mux
 	mux := http.NewServeMux()
@@ -103,7 +104,7 @@ func serve(certificate, key, hostname string, port int) {
 */
 
 func guiHandler(w http.ResponseWriter, r *http.Request) {
-	bytes, _ := Asset("static/index.html")
+	bytes, _ := timeline.Asset("static/index.html")
 	fmt.Fprintf(w, "%s\n", string(bytes))
 }
 
@@ -127,7 +128,7 @@ func handlePost(w *http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	result := processBytes(body)
+	result := timeline.ProcessBytes(body)
 
 	if result.Code > 0 {
 		fmt.Fprintf(*w, "<p>%s</p>", result.Message)

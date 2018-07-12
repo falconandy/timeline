@@ -27,7 +27,7 @@
 // static/timeline-schema.json
 // DO NOT EDIT!
 
-package main
+package timeline
 
 import (
 	"bytes"
@@ -644,31 +644,31 @@ func AssetNames() []string {
 
 // _bindata is a table, holding each asset generator, mapped to its name.
 var _bindata = map[string]func() (*asset, error){
-	"static/css/bootstrap-colorpicker.min.css": staticCssBootstrapColorpickerMinCss,
-	"static/css/bootstrap-datepicker3.min.css": staticCssBootstrapDatepicker3MinCss,
-	"static/css/bootstrap-theme.min.css": staticCssBootstrapThemeMinCss,
-	"static/css/bootstrap.min.css": staticCssBootstrapMinCss,
-	"static/css/main.css": staticCssMainCss,
-	"static/fonts/glyphicons-halflings-regular.eot": staticFontsGlyphiconsHalflingsRegularEot,
-	"static/fonts/glyphicons-halflings-regular.svg": staticFontsGlyphiconsHalflingsRegularSvg,
-	"static/fonts/glyphicons-halflings-regular.ttf": staticFontsGlyphiconsHalflingsRegularTtf,
-	"static/fonts/glyphicons-halflings-regular.woff": staticFontsGlyphiconsHalflingsRegularWoff,
-	"static/fonts/glyphicons-halflings-regular.woff2": staticFontsGlyphiconsHalflingsRegularWoff2,
-	"static/i18n.json": staticI18nJson,
+	"static/css/bootstrap-colorpicker.min.css":              staticCssBootstrapColorpickerMinCss,
+	"static/css/bootstrap-datepicker3.min.css":              staticCssBootstrapDatepicker3MinCss,
+	"static/css/bootstrap-theme.min.css":                    staticCssBootstrapThemeMinCss,
+	"static/css/bootstrap.min.css":                          staticCssBootstrapMinCss,
+	"static/css/main.css":                                   staticCssMainCss,
+	"static/fonts/glyphicons-halflings-regular.eot":         staticFontsGlyphiconsHalflingsRegularEot,
+	"static/fonts/glyphicons-halflings-regular.svg":         staticFontsGlyphiconsHalflingsRegularSvg,
+	"static/fonts/glyphicons-halflings-regular.ttf":         staticFontsGlyphiconsHalflingsRegularTtf,
+	"static/fonts/glyphicons-halflings-regular.woff":        staticFontsGlyphiconsHalflingsRegularWoff,
+	"static/fonts/glyphicons-halflings-regular.woff2":       staticFontsGlyphiconsHalflingsRegularWoff2,
+	"static/i18n.json":                                      staticI18nJson,
 	"static/img/bootstrap-colorpicker/alpha-horizontal.png": staticImgBootstrapColorpickerAlphaHorizontalPng,
-	"static/img/bootstrap-colorpicker/alpha.png": staticImgBootstrapColorpickerAlphaPng,
-	"static/img/bootstrap-colorpicker/hue-horizontal.png": staticImgBootstrapColorpickerHueHorizontalPng,
-	"static/img/bootstrap-colorpicker/hue.png": staticImgBootstrapColorpickerHuePng,
-	"static/img/bootstrap-colorpicker/saturation.png": staticImgBootstrapColorpickerSaturationPng,
-	"static/index.html": staticIndexHtml,
-	"static/js/bootstrap-colorpicker.min.js": staticJsBootstrapColorpickerMinJs,
-	"static/js/bootstrap-datepicker.min.js": staticJsBootstrapDatepickerMinJs,
-	"static/js/bootstrap.min.js": staticJsBootstrapMinJs,
-	"static/js/bundle-min.js": staticJsBundleMinJs,
-	"static/js/bundle.js": staticJsBundleJs,
-	"static/js/clipboard.min.js": staticJsClipboardMinJs,
-	"static/js/jquery.min.js": staticJsJqueryMinJs,
-	"static/timeline-schema.json": staticTimelineSchemaJson,
+	"static/img/bootstrap-colorpicker/alpha.png":            staticImgBootstrapColorpickerAlphaPng,
+	"static/img/bootstrap-colorpicker/hue-horizontal.png":   staticImgBootstrapColorpickerHueHorizontalPng,
+	"static/img/bootstrap-colorpicker/hue.png":              staticImgBootstrapColorpickerHuePng,
+	"static/img/bootstrap-colorpicker/saturation.png":       staticImgBootstrapColorpickerSaturationPng,
+	"static/index.html":                                     staticIndexHtml,
+	"static/js/bootstrap-colorpicker.min.js":                staticJsBootstrapColorpickerMinJs,
+	"static/js/bootstrap-datepicker.min.js":                 staticJsBootstrapDatepickerMinJs,
+	"static/js/bootstrap.min.js":                            staticJsBootstrapMinJs,
+	"static/js/bundle-min.js":                               staticJsBundleMinJs,
+	"static/js/bundle.js":                                   staticJsBundleJs,
+	"static/js/clipboard.min.js":                            staticJsClipboardMinJs,
+	"static/js/jquery.min.js":                               staticJsJqueryMinJs,
+	"static/timeline-schema.json":                           staticTimelineSchemaJson,
 }
 
 // AssetDir returns the file names below a certain
@@ -710,41 +710,42 @@ type bintree struct {
 	Func     func() (*asset, error)
 	Children map[string]*bintree
 }
+
 var _bintree = &bintree{nil, map[string]*bintree{
 	"static": &bintree{nil, map[string]*bintree{
 		"css": &bintree{nil, map[string]*bintree{
 			"bootstrap-colorpicker.min.css": &bintree{staticCssBootstrapColorpickerMinCss, map[string]*bintree{}},
 			"bootstrap-datepicker3.min.css": &bintree{staticCssBootstrapDatepicker3MinCss, map[string]*bintree{}},
-			"bootstrap-theme.min.css": &bintree{staticCssBootstrapThemeMinCss, map[string]*bintree{}},
-			"bootstrap.min.css": &bintree{staticCssBootstrapMinCss, map[string]*bintree{}},
-			"main.css": &bintree{staticCssMainCss, map[string]*bintree{}},
+			"bootstrap-theme.min.css":       &bintree{staticCssBootstrapThemeMinCss, map[string]*bintree{}},
+			"bootstrap.min.css":             &bintree{staticCssBootstrapMinCss, map[string]*bintree{}},
+			"main.css":                      &bintree{staticCssMainCss, map[string]*bintree{}},
 		}},
 		"fonts": &bintree{nil, map[string]*bintree{
-			"glyphicons-halflings-regular.eot": &bintree{staticFontsGlyphiconsHalflingsRegularEot, map[string]*bintree{}},
-			"glyphicons-halflings-regular.svg": &bintree{staticFontsGlyphiconsHalflingsRegularSvg, map[string]*bintree{}},
-			"glyphicons-halflings-regular.ttf": &bintree{staticFontsGlyphiconsHalflingsRegularTtf, map[string]*bintree{}},
-			"glyphicons-halflings-regular.woff": &bintree{staticFontsGlyphiconsHalflingsRegularWoff, map[string]*bintree{}},
+			"glyphicons-halflings-regular.eot":   &bintree{staticFontsGlyphiconsHalflingsRegularEot, map[string]*bintree{}},
+			"glyphicons-halflings-regular.svg":   &bintree{staticFontsGlyphiconsHalflingsRegularSvg, map[string]*bintree{}},
+			"glyphicons-halflings-regular.ttf":   &bintree{staticFontsGlyphiconsHalflingsRegularTtf, map[string]*bintree{}},
+			"glyphicons-halflings-regular.woff":  &bintree{staticFontsGlyphiconsHalflingsRegularWoff, map[string]*bintree{}},
 			"glyphicons-halflings-regular.woff2": &bintree{staticFontsGlyphiconsHalflingsRegularWoff2, map[string]*bintree{}},
 		}},
 		"i18n.json": &bintree{staticI18nJson, map[string]*bintree{}},
 		"img": &bintree{nil, map[string]*bintree{
 			"bootstrap-colorpicker": &bintree{nil, map[string]*bintree{
 				"alpha-horizontal.png": &bintree{staticImgBootstrapColorpickerAlphaHorizontalPng, map[string]*bintree{}},
-				"alpha.png": &bintree{staticImgBootstrapColorpickerAlphaPng, map[string]*bintree{}},
-				"hue-horizontal.png": &bintree{staticImgBootstrapColorpickerHueHorizontalPng, map[string]*bintree{}},
-				"hue.png": &bintree{staticImgBootstrapColorpickerHuePng, map[string]*bintree{}},
-				"saturation.png": &bintree{staticImgBootstrapColorpickerSaturationPng, map[string]*bintree{}},
+				"alpha.png":            &bintree{staticImgBootstrapColorpickerAlphaPng, map[string]*bintree{}},
+				"hue-horizontal.png":   &bintree{staticImgBootstrapColorpickerHueHorizontalPng, map[string]*bintree{}},
+				"hue.png":              &bintree{staticImgBootstrapColorpickerHuePng, map[string]*bintree{}},
+				"saturation.png":       &bintree{staticImgBootstrapColorpickerSaturationPng, map[string]*bintree{}},
 			}},
 		}},
 		"index.html": &bintree{staticIndexHtml, map[string]*bintree{}},
 		"js": &bintree{nil, map[string]*bintree{
 			"bootstrap-colorpicker.min.js": &bintree{staticJsBootstrapColorpickerMinJs, map[string]*bintree{}},
-			"bootstrap-datepicker.min.js": &bintree{staticJsBootstrapDatepickerMinJs, map[string]*bintree{}},
-			"bootstrap.min.js": &bintree{staticJsBootstrapMinJs, map[string]*bintree{}},
-			"bundle-min.js": &bintree{staticJsBundleMinJs, map[string]*bintree{}},
-			"bundle.js": &bintree{staticJsBundleJs, map[string]*bintree{}},
-			"clipboard.min.js": &bintree{staticJsClipboardMinJs, map[string]*bintree{}},
-			"jquery.min.js": &bintree{staticJsJqueryMinJs, map[string]*bintree{}},
+			"bootstrap-datepicker.min.js":  &bintree{staticJsBootstrapDatepickerMinJs, map[string]*bintree{}},
+			"bootstrap.min.js":             &bintree{staticJsBootstrapMinJs, map[string]*bintree{}},
+			"bundle-min.js":                &bintree{staticJsBundleMinJs, map[string]*bintree{}},
+			"bundle.js":                    &bintree{staticJsBundleJs, map[string]*bintree{}},
+			"clipboard.min.js":             &bintree{staticJsClipboardMinJs, map[string]*bintree{}},
+			"jquery.min.js":                &bintree{staticJsJqueryMinJs, map[string]*bintree{}},
 		}},
 		"timeline-schema.json": &bintree{staticTimelineSchemaJson, map[string]*bintree{}},
 	}},
@@ -796,4 +797,3 @@ func _filePath(dir, name string) string {
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
 }
-

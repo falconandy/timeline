@@ -1,4 +1,4 @@
-package main
+package timeline
 
 import (
 	"encoding/json"
@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func processFile(inputPath string, ch chan<- ShortResult) {
+func ProcessFile(inputPath string, ch chan<- ShortResult) {
 	start := time.Now()
 
 	buffer, err := ioutil.ReadFile(inputPath)
@@ -24,7 +24,7 @@ func processFile(inputPath string, ch chan<- ShortResult) {
 		return
 	}
 
-	result := processBytes(buffer)
+	result := ProcessBytes(buffer)
 
 	//output filename
 	bare := strings.Replace(strings.ToLower(inputPath), ".json", "", -1)
@@ -46,7 +46,7 @@ func processFile(inputPath string, ch chan<- ShortResult) {
 	return
 }
 
-func processBytes(bytes []byte) Result {
+func ProcessBytes(bytes []byte) Result {
 	start := time.Now()
 
 	i18n, msg := getI18n()
@@ -69,11 +69,11 @@ func processBytes(bytes []byte) Result {
 	}
 
 	if !result.Valid() {
-		fmt.Printf("Invalid JSON:\n")
-		for _, desc := range result.Errors() {
-			fmt.Printf("- %s\n", desc)
-		}
-		return Result{fmt.Sprintf("Invalid JSON: %s\n", result.Errors()[0]), 1, nil}
+		//fmt.Printf("Invalid JSON:\n")
+		//for _, desc := range result.Errors() {
+		//	fmt.Printf("- %s\n", desc)
+		//}
+		//return Result{fmt.Sprintf("Invalid JSON: %s\n", result.Errors()[0]), 1, nil}
 	}
 
 	var data Data
